@@ -1,0 +1,51 @@
+﻿<Window x:Class="WPFTEST.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFTEST"
+        mc:Ignorable="d"
+        Title="Snake Game" Height="469.582" Width="494.93" KeyDown="KeyDownCheck" ResizeMode="NoResize" Icon="icon.png" Foreground="Black">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+            <GradientStop Color="#FF28A84B" Offset="1"/>
+            <GradientStop Color="#FF86DCB9" Offset="0.065"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="46*"/>
+            <ColumnDefinition Width="242*"/>
+            <ColumnDefinition Width="44*"/>
+            <ColumnDefinition Width="147*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="gameBtn" Content="Start" Grid.Column="4" HorizontalAlignment="Left" Margin="1,36,0,0" VerticalAlignment="Top" Width="124" Height="29" Click="Button_Click" FontFamily="Montserrat SemiBold" FontSize="16"/>
+        <TextBox Grid.Column="3" HorizontalAlignment="Left" Height="62" Margin="40,325,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137" FontFamily="Montserrat" Text="Use the W, A, D, S key on the key board to change the direction of the snake." Grid.ColumnSpan="2" IsReadOnly="True" BorderBrush="White"/>
+        <Label Content="Score:" Grid.Column="4" HorizontalAlignment="Left" Height="33" Margin="1,143,0,0" VerticalAlignment="Top" Width="61" FontFamily="Montserrat Medium" FontSize="14" Foreground="#FF232323"/>
+        <Label x:Name="ScoreValue" Content="0" Grid.Column="4" HorizontalAlignment="Left" Margin="62,145,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.288,0.504" Width="48" FontFamily="Montserrat SemiBold"/>
+        <Label Content="How to play?" Grid.Column="3" HorizontalAlignment="Left" Height="25" Margin="36.374,300,0,0" VerticalAlignment="Top" Width="91" FontFamily="Montserrat SemiBold" Grid.ColumnSpan="2" Foreground="#FFDBFD01"/>
+        <Canvas x:Name="Area" Grid.ColumnSpan="3" Grid.Column="1" HorizontalAlignment="Left" Height="410" Margin="2,10,0,0" VerticalAlignment="Top" Width="310" Background="#FF96C79C"/>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.ColumnSpan="3" Grid.Column="1" HorizontalAlignment="Left" Height="410" Margin="2,10,0,0" VerticalAlignment="Top" Width="310"/>
+        <Button x:Name="gamePauseBtn" Content="Pause" Grid.Column="4" HorizontalAlignment="Left" Margin="1,70,0,0" VerticalAlignment="Top" Width="124" Height="29" Click="GamePause_Button_Click" FontFamily="Montserrat SemiBold" FontSize="16" IsEnabled="False"/>
+        <Button x:Name="gameStopBtn" Content="Stop" Grid.Column="4" HorizontalAlignment="Left" Margin="1,104,0,0" VerticalAlignment="Top" Width="124" Height="29" Click="GameStop_Button_Click" FontFamily="Montserrat SemiBold" FontSize="16" IsEnabled="False"/>
+        <ComboBox x:Name="SnakeColor" Grid.Column="4" HorizontalAlignment="Left" Height="20" Margin="1,258,0,0" VerticalAlignment="Top" Width="124" SelectedIndex="0" IsSynchronizedWithCurrentItem="False" FontFamily="Montserrat">
+            <ComboBoxItem Content="Default"/>
+            <ComboBoxItem Content="Black"/>
+            <ComboBoxItem Content="Blue"/>
+            <ComboBoxItem Content="Brown"/>
+            <ComboBoxItem Content="Gray"/>
+            <ComboBoxItem Content="Orange"/>
+            <ComboBoxItem Content="Pink"/>
+            <ComboBoxItem Content="Purple"/>
+            <ComboBoxItem Content="Red"/>
+            <ComboBoxItem Content="Violet"/>
+            <ComboBoxItem Content="White"/>
+            <ComboBoxItem Content="Yellow"/>
+        </ComboBox>
+        <Label Content="Snake's Color" Grid.Column="4" HorizontalAlignment="Left" Height="23" Margin="1,235,0,0" VerticalAlignment="Top" Width="124" FontFamily="Montserrat" FontWeight="Bold"/>
+        <Label Content="Speed:" Grid.Column="4" HorizontalAlignment="Left" Height="27" Margin="3,191,0,0" VerticalAlignment="Top" Width="118" FontWeight="Bold" FontFamily="Montserrat"/>
+        <TextBox x:Name="SpeedHolder" Grid.Column="4" HorizontalAlignment="Left" Height="16" Margin="57,195,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="40" FontFamily="Montserrat" TextAlignment="Center" RenderTransformOrigin="0.515,0.896"/>
+
+    </Grid>
+</Window>
